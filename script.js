@@ -9,6 +9,7 @@ function hamtaVader(stadId, elementId) {
         .then((data) => {
             
             let temperatur = Math.round(data.main.temp) + "°C";
+            let temperaturF = Math.round((data.main.temp * 9/5) + 32) + "°F";
             let beskrivning = data.weather[0].description;
 
             
@@ -33,3 +34,5 @@ function hamtaVader(stadId, elementId) {
 
 hamtaVader('2673730', 'Stockholm-ruta');
 hamtaVader('2711537', 'Goteborg-ruta');
+hamtaVader('202062', 'Butare-ruta');      
+hamtaVader('202061', 'Kigali-ruta');

@@ -1,8 +1,176 @@
-﻿/* Gör texten större, fetare och centrera den */
-h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    color: #333;
+﻿/* Grundläggande reset för att ta bort marginaler och padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
+  transition: background-color 0.5s ease;
+}
+
+/* Header-styling */
+header {
+  width: 100%;
+  background-color: #4a90e2;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+header button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #4a90e2;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+header button:hover {
+  background-color: #3a7ed2;
+  color: white;
+}
+
+/* Main styling */
+main {
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Section-styling */
+section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease;
+}
+
+/* Titel-styling */
+h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Stad-val styling */
+.valja-stad {
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.valja-stad label {
+  font-size: 1rem;
+  color: #333;
+}
+
+.valja-stad select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+/* Jämförelse-knappen */
+button#vaderJamforelse {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button#vaderJamforelse:hover {
+  background-color: #357abd;
+}
+
+/* Väderkort styling */
+.vader-kort {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  background-color: #e3f2fd;
+  color: #333;
+  transition: background-color 0.5s ease;
+}
+
+/* Temperatur och beskrivning styling */
+.vader-kort h3 {
+  font-size: 1.3rem;
+  color: #4a90e2;
+  margin-bottom: 0.5rem;
+}
+
+.vader-kort p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+/* Sverige och Rwanda temaväxling */
+body.sverige-theme {
+  background-color: #e3f2fd;
+}
+
+body.sverige-theme header {
+  background-color: #005b9a;
+}
+
+body.rwanda-theme {
+  background-color: #ffebc8;
+}
+
+body.rwanda-theme header {
+  background-color: #e69138;
+}
+
+.rwanda-theme .vader-kort {
+  background-color: #ffdd99;
+}
+
+.sverige-theme .vader-kort {
+  background-color: #cfe3f8;
+}
+
+/* Enkel animation för växlande tema */
+header, .vader-kort, body {
+  transition: background-color 0.3s ease;
+}
+
+/* Responsiv design */
+@media (max-width: 600px) {
+  header h1 {
+      font-size: 1.5rem;
   }
-  
+
+  button#vaderJamforelse {
+      font-size: 1rem;
+      padding: 0.7rem 1.2rem;
+  }
+
+  .vader-kort p {
+      font-size: 1rem;
+  }
+}

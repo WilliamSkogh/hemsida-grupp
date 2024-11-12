@@ -1,34 +1,45 @@
 ﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Väderapp</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
 
+    <header>
+        <h1>Klass väderapp</h1>
+        <button id="toggleTheme">Växla Tema Sverige & Rwanda</button>
     </header>
 
     <main>
-        <div id="Stockholm-ruta">
-            <h2>Stockholm</h2>
-            <p class="temperatur"></p>
-            <p class="beskrivning"></p>
+        <section id="valjastad">
+        <h2>Välj Städer</h2>
+        <div class="valja-stad">
+            <label for="sverigeStad">Välj en stad i Sverige</label>
+            <select id="sverigeStad">
+            <option value="göteborg">Göteborg</option>
+             <option value="stockholm">Stockholm</option>
+        </select>
         </div>
-        
-        <div id="Goteborg-ruta">
-            <h2>Göteborg</h2>
-            <p class="temperatur"></p>
-            <p class="beskrivning"></p>
-        </div>
-        
+        <button id="vaderJamforelse">Jämför Väder</button>
+    </section>
+
+ <section id="vaderInformation">
+    <h2>Väderinformation</h2>
+     <div id="sverigeVader" class="vader-kort">
+        <h3>Stad i Sverige</h3>
+        <p id="sverigeTemperatur">Temperatur: 355°C</p>
+         <p id="sverigeNederbord">Väder: Kalla vindar med blixt från en klar himmel</p>
+     </div>
+     <div id="rwandaVader" class="vader-kort">
+      <h3>Stad i Rwanda</h3>
+      <p id="rwandaTemperatur">Temperatur: 565°C</p>
+      <p id="rwandaNederbord">Väder: Kalla vindar med blixt från en klar himmel</p>
+     </div>
+ </section>
     </main>
-
-    <footer>
-
-    </footer>
     <script src="script.js"></script>
 </body>
 </html>

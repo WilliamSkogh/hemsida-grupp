@@ -1,3 +1,206 @@
+<<<<<<< HEAD
 body
 {
+=======
+﻿* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e0f7fa;
+  transition: background-color 0.4s ease;
+}
+
+/* Header-styling */
+header {
+  width: 100%;
+  background-color: #007bb5;
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem 0;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+header button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  color: #007bb5;
+  background-color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+header button:hover {
+  background-color: #005c91;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Main styling */
+main {
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+}
+
+/* Section-styling */
+section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+}
+
+/* Titel-styling */
+h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Stad-val styling */
+.valja-stad {
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.valja-stad label {
+  font-size: 1rem;
+  color: #555;
+}
+
+.valja-stad select {
+  padding: 0.6rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  width: 100%;
+  border: 2px solid #007bb5;
+  background-color: #f0f8ff;
+  transition: border-color 0.3s ease;
+}
+
+.valja-stad select:hover {
+  border-color: #005c91;
+}
+/* Jämförelse-knappen */
+button#vaderJamforelse {
+  padding: 0.9rem 1.7rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #007bb5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button#vaderJamforelse:hover {
+  background-color: #005c91;
+  transform: scale(1.05);
+}
+
+/* Väderkort styling */
+.vader-kort {
+  margin-top: 1.5rem;
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  background-color: #e0f7fa;
+  color: #333;
+  transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+.vader-kort:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Temperatur och beskrivning styling */
+.vader-kort h3 {
+  font-size: 1.6rem;
+  color: #007bb5;
+  margin-bottom: 0.7rem;
+}
+
+.vader-kort p {
+  font-size: 1.2rem;
+  margin: 0.7rem 0;
+}
+
+/* Sverige och Rwanda temaväxling */
+body.sverige-theme {
+  background-color: #d0eaff;
+}
+
+body.sverige-theme header {
+  background-color: #005b9a;
+}
+
+body.rwanda-theme {
+  background-color: #fff3e0;
+}
+
+body.rwanda-theme header {
+  background-color: #e67e22;
+}
+
+.rwanda-theme .vader-kort {
+  background-color: #ffcc80;
+}
+
+.sverige-theme .vader-kort {
+  background-color: #cfe3f8;
+}
+
+/* Enkel animation för växlande tema */
+header, .vader-kort, body {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover-effekter */
+header:hover, .vader-kort:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsiv design */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  button#vaderJamforelse {
+    font-size: 1rem;
+    padding: 0.7rem 1.4rem;
+  }
+
+  .vader-kort p {
+    font-size: 1rem;
+  }
+>>>>>>> main
 }

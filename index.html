@@ -1,71 +1,52 @@
-﻿<!DOCTYPE html>
-<html>
+﻿﻿<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Väderapp</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-    <div class="card">
-         <div class = "search">
-            <input type="text" placeholder="enter city name"
-            spellcheck="false">
-            <button><img src="images/Search.pnp.jpg"> </button>
 
+    <header>
+        <h1>Klass väderapp</h1>
+        <button id="toggleTheme">Växla Tema Sverige & Rwanda</button>
+    </header>
+
+    <main>
+        <section id="valjastad">
+        <h2>Välj Städer</h2>
+        <div class="valja-stad">
+            <label for="sverigeStad">Välj en stad i Sverige</label>
+            <select id="sverigeStad">
+                <option value="2711537">Göteborg</option>
+                <option value="2673730">Stockholm</option>
+        </select>
         </div>
-        <div class="Weather">
-            <img src="images/rain.png" class="weather-icon">
-            <h1 class="temp">4°c</h1>
-            <h2 class="city">Stockholm</h2>
-            <div  class="details">
-                <div class="col"> 
-                    <img src="images/humidity.png">
-                    <div>
-                        <p class="humidity">39%</p>
-                        <p>Humidity</p>
-                    </div>
-                    <div class="col"> 
-                        <img src="images/wind.png">
-                        <div>
-                            <p class="wind">20 km/h</p>
-                            <p>Wind Speed</p>
-                        </div>
-                    </div>
-            </div>
+        <div class="valja-stad">
+            <label for="rwandaStad">Välj en stad i Rwanda</label>
+            <select id="rwandaStad">
+                <option value="202061">Kigali</option>
+                <option value="203112">Butare</option>
+            </select>
         </div>
-    </div>
+        <button id="vaderJamforelse">Jämför Väder</button>
+    </section>
 
-    <script>
-        const apiKey = "64153c628fc620f0cdb6eb639954fdbe";
-        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-        
-        const searchBox = document.querySelector(".search input");
-        const searchBtn = document.querySelector(".search button");
-        
-        async function checkWeather(city) {
-            const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-            const data = await response.json();
-            console.log(data);
-            
-            
-            document.querySelector(".city").innerHTML = data.name;
-            document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
-            document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-            document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
-            
-            if(data.weather[0].main =="Clouds"){
-
-        
-        }
-    }
-        
-        searchBtn.addEventListener("click", () => {
-            const city = searchBox.value;
-            checkWeather(city);  
-        });
-        </script>
-        
+ <section id="vaderInformation">
+    <h2>Väderinformation</h2>
+     <div id="sverigeVader" class="vader-kort">
+        <h3 class="sverigeStad"></h3>
+        <p class="temperatur">Temperatur: </p>
+         <p class="beskrivning">Status: </p>
+     </div>
+     <div id="rwandaVader" class="vader-kort">
+        <h3 class="rwandaStad"></h3>
+      <p class="temperatur">Temperatur: </p>
+      <p class="beskrivning">Status:</p>
+     </div>
+ </section>
+    </main>
+    <script src="script.js"></script>
 </body>
-
 </html>

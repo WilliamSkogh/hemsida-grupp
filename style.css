@@ -1,82 +1,240 @@
-﻿*{
+﻿
+
+﻿* {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
 }
-body{
-  background: #222;
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e0f7fa;
+  transition: background-color 0.4s ease;
 }
-.card{
-  width: 90%;
-  max-width: 470px;
-  background: linear-gradient(135deg, #00feba, #5b548a);
+
+/* Header-styling */
+header {
+  width: 100%;
+  background-color: #007bb5;
   color: #fff;
-  margin: 100px  auto 0;
-  border-radius: 20px;
-  padding: 40px  35px;
+  text-align: center;
+  padding: 1.2rem 0;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+header button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  color: #007bb5;
+  background-color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+header button:hover {
+  background-color: #005c91;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Main styling */
+main {
+  width: 90%;
+  max-width: 900px;
   text-align: center;
 }
-.search{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+/* Section-styling */
+section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, background-color 0.4s ease;
 }
-.search input{
-  border: 0;
-  outline: 0;
-  background: #ebfffc;
-  color: #555;
-  padding: 10px 25px;
-  height: 60px;
-  border-radius: 30px;
-  flex: 1;
-  margin-right: 16px;
-  font-size: 18px;
+
+section:hover {
+  transform: translateY(-5px);
 }
-.search button{
-  border: 0;
-  outline: 0;
-  background: #ebfffc;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  cursor: pointer;
+
+/* Titel-styling */
+h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
-.search button img{
-  width: 16px;
-}
-.weather-icon{
-  width: 170px;
-  margin-top: 30px;
-}
-.weather h1{
-  font-size: 80px;
-  font-weight: 500;
-}
-.weather h2{
-  font-size: 45px;
-  font-weight: 400;
-  margin-top: -10px;
-}
-.details{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  margin-top: 50px;
-}
-.col{
-  display: flex;
-  align-items: center;
+
+/* Stad-val styling */
+.valja-stad {
+  margin: 1.5rem 0;
   text-align: left;
 }
-.col img{
-  width: 40px;
-  margin-right: 10px;
+
+.valja-stad label {
+  font-size: 1rem;
+  color: #555;
 }
-.humidity, .wind{
-  font-size: 28px;
-  margin-top: -6px;
+
+.valja-stad select {
+  padding: 0.6rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  width: 100%;
+  border: 2px solid #007bb5;
+  background-color: #f0f8ff;
+  transition: border-color 0.3s ease;
+}
+
+.valja-stad select:hover {
+  border-color: #005c91;
+}
+/* Jämförelse-knappen */
+button#vaderJamforelse {
+  padding: 0.9rem 1.7rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #007bb5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button#vaderJamforelse:hover {
+  background-color: #005c91;
+  transform: scale(1.05);
+}
+
+/* Väderkort styling */
+.vader-kort {
+  margin-top: 1.5rem;
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  background-color: #e0f7fa;
+  color: #333;
+  transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+.vader-kort:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Temperatur och beskrivning styling */
+.vader-kort h3 {
+  font-size: 1.6rem;
+  color: #007bb5;
+  margin-bottom: 0.7rem;
+}
+
+.vader-kort p {
+  font-size: 1.2rem;
+  margin: 0.7rem 0;
+}
+
+/* Sverige och Rwanda temaväxling */
+body.sverige-theme {
+  background-color: #d0eaff;
+}
+
+body.sverige-theme header {
+  background-color: #005b9a;
+}
+
+body.rwanda-theme {
+  background-color: #fff3e0;
+}
+
+body.rwanda-theme header {
+  background-color: #e67e22;
+}
+
+.rwanda-theme .vader-kort {
+  background-color: #ffcc80;
+}
+
+.sverige-theme .vader-kort {
+  background-color: #cfe3f8;
+}
+
+/* Enkel animation för växlande tema */
+header, .vader-kort, body {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover-effekter */
+header:hover, .vader-kort:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsiv design */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  button#vaderJamforelse {
+    font-size: 1rem;
+    padding: 0.7rem 1.4rem;
+  }
+
+  .vader-kort p {
+    font-size: 1rem;
+  }
+
+}
+ 
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e0f7fa; 
+  transition: background-color 0.4s ease;
+}
+
+
+body.ljustema {
+  background-color: #e0f7fa; 
+}
+
+body.ljustema header {
+  background-color: #007bb5; 
+}
+
+body.ljustema .vader-kort {
+  background-color: #cfe3f8; 
+}
+
+
+body.morktema {
+  background-color: #003f5c; 
+}
+
+body.morktema header {
+  background-color: #002a3b; 
+}
+
+body.morktema .vader-kort {
+  background-color: #557a95; 
 }

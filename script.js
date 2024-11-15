@@ -1,12 +1,16 @@
 const apiNyckel = 'b145baa6f3f75a96d9e6d88ac27a7d08';
 
 
+/* function hamtaVader(stadId, elementId, stadNamn) {
+    const url = `https://api.openweathermap.org/data/2.5/weather?id=${stadId}&units=metric&appid=${apiNyckel}&lang=sv`; */
+
 function hamtaVader(stadId, elementId, stadNamn) {
     const url = `https://api.openweathermap.org/data/2.5/weather?id=${stadId}&units=metric&appid=${apiNyckel}&lang=sv`;
 
     fetch(url)
         .then((response) => response.json())
         .then((data) => {
+            
             
             let temperatur = Math.round(data.main.temp) + "°C";
             let temperaturF = Math.round((data.main.temp * 9/5) + 32) + "°F";
@@ -17,8 +21,13 @@ function hamtaVader(stadId, elementId, stadNamn) {
             .querySelector('h3').innerText = stadNamn;
 
             document
+            .getElementById(elementId)
+            .querySelector('h3').innerText = stadNamn;
+
+            document
                 .getElementById(elementId)
                 .querySelector('.temperatur').innerText = `Temperatur: ${temperatur}`;
+
 
             document
                 .getElementById(elementId)
@@ -29,6 +38,9 @@ function hamtaVader(stadId, elementId, stadNamn) {
             document
                 .getElementById(elementId)
                 .querySelector('.temperatur').innerText = "något blev fel";
+
+            console.error("Fel vid hämtning av väderdata:", error);
+                
 
             console.error("Fel vid hämtning av väderdata:", error);
         });
